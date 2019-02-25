@@ -17,7 +17,7 @@ pipeline {
                dir ('poky') {
                 sh '''bash -c "source oe-init-build-env && \
                         bitbake-layers add-layer ../meta-example && \
-                        bitbake core-image-minimal" '''
+                        bitbake -j 64 core-image-minimal" '''
                 }
             }
         }            
