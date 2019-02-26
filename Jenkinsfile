@@ -15,9 +15,9 @@ pipeline {
         stage('Build') {
             steps {
                dir ('poky') {
-                sh 'bash -c bitbake -c cleansstate cpcmd'   
                 sh '''bash -c "export BB_NUMBER_THREADS=64 && source oe-init-build-env && \
                         bitbake-layers add-layer ../meta-example && \
+                        bitbake -c cleansstate cpcmd &&\
                         bitbake core-image-minimal" '''
                 }
             }
