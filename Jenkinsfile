@@ -18,7 +18,8 @@ pipeline {
                 sh '''bash -c "export BB_NUMBER_THREADS=64 && export IMAGE_INSTALL_append=cpcmd && source oe-init-build-env && \
                         bitbake-layers add-layer ../meta-example && \
                         bitbake -c cleansstate sysd-minimal-image &&\
-                        bitbake sysd-minimal-image" '''
+                        bitbake sysd-minimal-image &&\
+                        bitbake sysd-minimal-image -c populate_sdk" '''
                 }
             }
         }            
