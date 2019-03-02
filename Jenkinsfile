@@ -17,7 +17,7 @@ pipeline {
                dir ('poky') {
                 sh '''bash -c "export BB_NUMBER_THREADS=64 && export IMAGE_INSTALL_append=cpcmd && source oe-init-build-env && \
                         bitbake-layers add-layer ../meta-example && \
-                        rpl -i -w "PACKAGE_CLASSES ?= \"package_rpm\"" "#PACKAGE_CLASSES ?= \"package_rpm\"" local.conf && \
+                        rpl -i -w "PACKAGE_CLASSES ?= \"package_rpm\"" "#PACKAGE_CLASSES ?= \"package_rpm\"" ./conf/local.conf && \
                         bitbake -c cleansstate sysd-minimal-image &&\
                         bitbake sysd-minimal-image &&\
                         bitbake sysd-minimal-image -c populate_sdk" '''
