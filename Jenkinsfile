@@ -21,7 +21,8 @@ pipeline {
                                sed -i 's/PACKAGE_CLASSES/#PACKAGE_CLASSES/g' ./conf/local.conf && \
                                bitbake -c cleansstate sysd-minimal-image &&\
                                bitbake sysd-minimal-image &&\
-                               bitbake sysd-minimal-image -c populate_sdk" '''
+                               bitbake sysd-minimal-image -c populate_sdk && \
+                               bitbake package-index" '''
                 }
             }
         }            
