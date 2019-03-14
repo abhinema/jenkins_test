@@ -19,7 +19,6 @@ pipeline {
             steps {
                dir ('poky') {
                 sh '''bash -c "export BB_NUMBER_THREADS=64 && \
-                        export MACHINE=raspberrypi3 && \
                         export IMAGE_INSTALL_append=cpcmd && \
                         source oe-init-build-env && \
                         rpl -i -w "PACKAGE_CLASSES ?= \"package_rpm\"" "#PACKAGE_CLASSES ?= \"package_rpm\"" local.conf && \
