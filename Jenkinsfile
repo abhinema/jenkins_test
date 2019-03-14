@@ -21,7 +21,7 @@ pipeline {
                 sh '''bash -c "export BB_NUMBER_THREADS=64 && 
                                export MACHINE=\"raspberrpi3\" && \
                                source oe-init-build-env && \
-                               rpl -i -w "PACKAGE_CLASSES ?= \"package_rpm\"" "#PACKAGE_CLASSES ?= \"package_rpm\"" local.conf &&\
+                               sed -i 's/PACKAGE_CLASSES/#PACKAGE_CLASSES/g' ./conf/local.conf && \
                                bitbake-layers add-layer ../meta-raspberrypi && \
                                bitbake-layers add-layer ../meta-example && \
                                bitbake -c cleansstate minimal-example &&\
