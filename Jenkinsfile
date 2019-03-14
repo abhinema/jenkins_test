@@ -19,7 +19,7 @@ pipeline {
             steps {
                dir ('poky') {
                 sh '''bash -c "export BB_NUMBER_THREADS=64 && 
-                               export MACHINE=\"raspberrpi3\" && \
+                               export MACHINE=\"raspberrypi3\" && \
                                source oe-init-build-env && \
                                sed -i 's/PACKAGE_CLASSES/#PACKAGE_CLASSES/g' ./conf/local.conf && \
                                bitbake-layers add-layer ../meta-raspberrypi && \
