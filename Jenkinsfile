@@ -21,9 +21,7 @@ pipeline {
                    dir ('oe-core') {
                      sh '''bash -c "export BB_NUMBER_THREADS=64 && 
                             . export &&\
-                            bitbake-layers add-layer ../meta-example && \
-                            bitbake -k core-image-minimal && \
-                            bitbake core-image-minimal -c populate_sdk" 
+                            bitbake -k angstrom-lxde-image " 
                             '''
                     }
                 }
