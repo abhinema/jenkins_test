@@ -22,8 +22,8 @@ pipeline {
                      sh '''bash -c "export BB_NUMBER_THREADS=64 && 
                             . export &&\
                             bitbake-layers add-layer ../meta-example && \
-                            bitbake -k angstrom-qt-x11-image && \
-                            bitbake angstrom-qt-x11-image -c populate_sdk" 
+                            bitbake -k core-image-minimal && \
+                            bitbake core-image-minimal -c populate_sdk" 
                             '''
                     }
                 }
