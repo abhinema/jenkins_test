@@ -7,8 +7,8 @@ pipeline {
                 dir ('poky') {
                     git branch: 'sumo', url: 'http://git.yoctoproject.org/git/poky.git'
                     dir ('oe-core') {
-                        repo init -u http://git.toradex.com/toradex-bsp-platform.git -b LinuxImageV2.7
-                        repo sync
+                        sh ''' repo init -u http://git.toradex.com/toradex-bsp-platform.git -b LinuxImageV2.7
+                               repo sync '''
                     }
                     dir ('meta-example') {
                         git branch: 'master', url: 'https://github.com/abhinema/meta-example.git'
