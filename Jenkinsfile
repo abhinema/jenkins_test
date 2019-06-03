@@ -21,6 +21,7 @@ pipeline {
                    dir ('oe-core') {
                      sh '''bash -c "export BB_NUMBER_THREADS=64 && 
                             . export &&\
+                            bitbake -c cleansstate angstrom-lxde-image &&\
                             bitbake -k angstrom-lxde-image " 
                             '''
                     }
