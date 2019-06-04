@@ -9,8 +9,6 @@ pipeline {
                         sh ''' python --version && \
                                openssl version -a
                            '''  
-                        sh ''' export PYTHONHTTPSVERIFY=0
-                           '''
                         sh ''' repo init -u http://git.toradex.com/toradex-bsp-platform.git -b LinuxImageV2.7
                                repo sync '''
                     }
