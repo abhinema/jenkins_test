@@ -19,11 +19,12 @@ pipeline {
             steps {
                 dir('fsl-imx6'){
                    dir ('oe-core') {
-                     sh ''' bash -c "export BB_NUMBER_THREADS=64 && 
-                            export MACHINE=apalis-imx6 && \
-                            . export &&\
-                            bitbake -k angstrom-lxde-image " 
-                            '''
+                     sh ''' bash python --version '''  
+                     //sh ''' bash -c "export BB_NUMBER_THREADS=64 && \
+                     //       export MACHINE=apalis-imx6 && \
+                     //       . export &&\
+                     //       bitbake -k angstrom-lxde-image " 
+                     //       '''
                     }
                 }
             }
