@@ -19,7 +19,9 @@ pipeline {
             steps {
                 dir('fsl-imx6'){
                    dir ('oe-core') {
-                     sh ''' python --version '''  
+                     sh ''' python --version && \
+                            openssl version -a
+                        '''  
                      sh ''' bash -c "export BB_NUMBER_THREADS=64 && \
                             export MACHINE=apalis-imx6 && \
                             . export &&\
