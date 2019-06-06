@@ -13,7 +13,7 @@ pipeline {
                                repo sync '''
                     }
                     dir ('meta-example') {
-                        git branch: 'master', url: 'https://github.com/abhinema/meta-example.git'
+                        git branch: 'master', url: 'https://github.com/abhinema/meta-example.git -b fsl-imx6'
                     }
                 }
             }
