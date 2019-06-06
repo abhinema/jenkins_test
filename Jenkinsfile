@@ -27,7 +27,7 @@ pipeline {
                             . export &&\
                             bitbake-layers add-layer ../meta-example && \
                             bitbake -c cleansstate minimal-example &&\
-                            sed -i 's/ANGSTROM_URI/#ANGSTROM_URI/g' ../layers/meta-angstrom/conf/distro/include/angstrom.inc \
+                            sed -i 's/ANGSTROM_URI/#ANGSTROM_URI/g' ../layers/meta-angstrom/conf/distro/include/angstrom.inc &&\
                             bitbake minimal-example &&\
                             bitbake package-index &&\
                             bitbake minimal-example -c populate_sdk" 
