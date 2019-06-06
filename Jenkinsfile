@@ -28,7 +28,8 @@ pipeline {
                             bitbake-layers add-layer ../meta-example && \
                             bitbake -c cleansstate minimal-example &&\
                             bitbake minimal-example &&\
-                            bitbake package-index" 
+                            bitbake package-index &&\
+                            bitbake minimal-example.bb -c populate_sdk" 
                         '''
                     }
                 }
