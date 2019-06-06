@@ -25,8 +25,9 @@ pipeline {
                      sh ''' bash -c "export BB_NUMBER_THREADS=64 && \
                             export MACHINE=apalis-imx6 && \
                             . export &&\
-                            bitbake -c cleansstate angstrom-lxde-image && \
-                            bitbake -k angstrom-lxde-image " 
+                            bitbake-layers add-layer ../meta-example && \
+                            bitbake -c cleansstate minimal-example &&\
+                            bitbake minimal-example" 
                         '''
                     }
                 }
