@@ -27,7 +27,8 @@ pipeline {
                             . export &&\
                             bitbake-layers add-layer ../meta-example && \
                             bitbake -c cleansstate minimal-example &&\
-                            bitbake minimal-example" 
+                            bitbake minimal-example &&\
+                            bitbake package-index" 
                         '''
                     }
                 }
