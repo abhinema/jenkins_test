@@ -29,7 +29,7 @@ pipeline {
                             bitbake -c cleansstate minimal-example &&\
                             bitbake minimal-example &&\
                             bitbake package-index &&\
-                            bitbake minimal-example.bb -c populate_sdk" 
+                            bitbake minimal-example -c populate_sdk" 
                         '''
                     }
                 }
