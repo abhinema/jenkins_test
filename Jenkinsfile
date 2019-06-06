@@ -26,10 +26,10 @@ pipeline {
                             export MACHINE=apalis-imx6 && \
                             . export &&\
                             bitbake-layers add-layer ../meta-example && \
-                            bitbake -c cleansstate minimal-example &&\
-                            bitbake minimal-example &&\
+                            bitbake -c cleansstate sysd-minimal-image &&\
+                            bitbake sysd-minimal-image &&\
                             bitbake package-index &&\
-                            bitbake minimal-example -c populate_sdk" 
+                            bitbake sysd-minimal-image -c populate_sdk" 
                         '''
                     }
                 }
