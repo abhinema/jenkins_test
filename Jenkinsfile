@@ -11,9 +11,9 @@ pipeline {
                            '''  
                         sh ''' repo init -u http://git.toradex.com/toradex-bsp-platform.git -b LinuxImageV2.7
                                repo sync '''
-                    }
-                    dir ('meta-example') {
-                        git branch: 'fsl-imx6', url: 'https://github.com/abhinema/meta-example.git'
+                        dir ('meta-example') {
+                            git branch: 'fsl-imx6', url: 'https://github.com/abhinema/meta-example.git'
+                        }
                     }
                 }
             }
